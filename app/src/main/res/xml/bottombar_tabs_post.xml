@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_home"
+        title="Posts"
+        barColorWhenSelected="@color/white"
+        icon="@drawable/ic_home"
+        inActiveColor="#000"
+        activeColor="@color/colorPrimary"
+        />
+
+    <tab
+        id="@+id/tab_favoritos"
+        title="Favoritos"
+        barColorWhenSelected="@color/white"
+        icon="@drawable/ic_heart_full_white"
+        inActiveColor="#000"
+        activeColor="@color/colorPrimary" />
+
+    <tab
+        id="@+id/tab_misposts"
+        title="Mis Posts"
+        barColorWhenSelected="@color/white"
+        icon="@drawable/ic_profile_user_white"
+        inActiveColor="#000"
+        activeColor="@color/colorPrimary" />
+</tabs>

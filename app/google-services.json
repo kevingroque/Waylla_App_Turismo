@@ -1,0 +1,66 @@
+{
+  "project_info": {
+    "project_number": "27107697578",
+    "firebase_url": "https://gamificador-turismo.firebaseio.com",
+    "project_id": "gamificador-turismo",
+    "storage_bucket": "gamificador-turismo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27107697578:android:d6c15ec25140bce5",
+        "android_client_info": {
+          "package_name": "com.roque.app.waylla_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27107697578-bfn3dpaprbqvcs0kls2p24b76nkduhpl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.roque.app.waylla_app",
+            "certificate_hash": "79ea14b61a7dfab8cc5feb8303000e5a3cb03356"
+          }
+        },
+        {
+          "client_id": "27107697578-hulkq59n8fc75ooe15hr0t97gj5ovnho.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "27107697578-hulkq59n8fc75ooe15hr0t97gj5ovnho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgGi2AYzkiukYpxW07mgd0EeUdbXIj_aA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27107697578-hulkq59n8fc75ooe15hr0t97gj5ovnho.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "27107697578-p9fo2a1shdqh2vlsannvg6av8vdcq4tb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.juniormoran.WayllaApp"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

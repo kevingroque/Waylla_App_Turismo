@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="8dp">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_post_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        card_view:cardBackgroundColor="@android:color/white"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="5dp"
+        card_view:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_foto_post_list"
+                android:layout_width="match_parent"
+                android:background="@drawable/ic_launcher_background"
+                android:layout_height="@dimen/post_list_item_image_height"
+                android:layout_marginBottom="8dp"
+                android:scaleType="centerCrop" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_perfil_user_post_list"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/img_foto_post_list"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="@dimen/post_list_item_author_image_margin"
+                app:srcCompat="@drawable/ic_profile_user"
+                app:civ_border_color="@color/like_icon_activated"
+                app:civ_border_width="3dp"/>
+
+            <TextView
+                android:id="@+id/txt_nombre_post_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:layout_below="@+id/img_foto_post_list"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/img_perfil_user_post_list"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="Keving Hanz Roque Huich"
+                android:textAppearance="@style/TextAppearance.Title" />
+
+            <LinearLayout
+                android:id="@+id/container_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="8dp"
+                android:layout_below="@+id/txt_nombre_post_list">
+
+                <LinearLayout
+                    android:id="@+id/timeContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingRight="8dp"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/timeImageView"
+                        app:srcCompat="@drawable/ic_time"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp" />
+
+                    <TextView
+                        android:id="@+id/timeTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="4dp"
+                        tools:text="4:45 pm"
+                        android:textAppearance="@style/TextAppearance.Second.Light" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dateContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingRight="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/dateImageView"
+                        app:srcCompat="@drawable/ic_calendar"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp" />
+
+                    <TextView
+                        android:id="@+id/dateTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="4dp"
+                        tools:text="May 28, 2016"
+                        android:textAppearance="@style/TextAppearance.Second.Light" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/placeContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/placeImageView"
+                        app:srcCompat="@drawable/ic_place"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp" />
+
+                    <TextView
+                        android:id="@+id/placeTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Lima"
+                        android:paddingLeft="4dp"
+                        android:textAppearance="@style/TextAppearance.Second.Light" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.borjabravo.readmoretextview.ReadMoreTextView
+                android:id="@+id/txt_descripcion_post_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:layout_below="@+id/container_date"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/img_perfil_user_post_list"
+                android:ellipsize="end"
+                tools:text="Descripcion del la imagen"
+                android:textAppearance="@style/TextAppearance.Second"
+                android:layout_alignParentEnd="true"
+                app:trimExpandedText="  Ver más..."
+                app:trimCollapsedText="  Ver menos"
+                app:colorClickableText="@android:color/holo_blue_light"/>
+
+            <include
+                android:id="@+id/counters_container_post_list"
+                layout="@layout/counters_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_below="@+id/txt_descripcion_post_list"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/comment_content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/comment_img_avatar"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:srcCompat="@drawable/ic_profile_user"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/comment_txt_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Username"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/comment_txt_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textSize="15dp"
+                android:text="Loading Comment..." />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="88dp"
+        android:background="#cccccc"/>
+
+</FrameLayout>

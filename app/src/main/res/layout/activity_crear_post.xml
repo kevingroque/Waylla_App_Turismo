@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.roque.app.waylla_app.activities.CrearPostActivity">
+
+
+    <ImageView
+        android:id="@+id/crearpost_img_imagen"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_stub"
+        android:layout_margin="15dp"/>
+
+    <EditText
+        android:id="@+id/crearpost_edittext_descripción"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/crearpost_img_imagen"
+        android:layout_margin="15dp"
+        android:hint="Descripción"/>
+
+    <Button
+        android:id="@+id/crearpost_btn_publicar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:text="Upload"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/colorAccent"/>
+
+</RelativeLayout>
