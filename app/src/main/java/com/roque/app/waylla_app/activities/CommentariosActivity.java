@@ -23,7 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.roque.app.waylla_app.R;
-import com.roque.app.waylla_app.adapters.ComentariosAdapter;
+import com.roque.app.waylla_app.adapters.ComentariosRecyclerViewAdapter;
 import com.roque.app.waylla_app.models.Comentario;
 
 import java.util.ArrayList;
@@ -36,7 +36,7 @@ public class CommentariosActivity extends AppCompatActivity {
     private EditText mComentMensajeTxt;
     private ImageView mSendCommentBtn;
     private RecyclerView mCommentsRecycler;
-    private ComentariosAdapter mCommentsAdapter;
+    private ComentariosRecyclerViewAdapter mCommentsAdapter;
     private List<Comentario> commentsList;
 
     private FirebaseFirestore mFirestore;
@@ -65,7 +65,7 @@ public class CommentariosActivity extends AppCompatActivity {
 
         //RecyclerView Firebase List
         commentsList = new ArrayList<>();
-        mCommentsAdapter = new ComentariosAdapter(commentsList);
+        mCommentsAdapter = new ComentariosRecyclerViewAdapter(commentsList);
         mCommentsRecycler.setHasFixedSize(true);
         mCommentsRecycler.setLayoutManager(new LinearLayoutManager(this));
         mCommentsRecycler.setAdapter(mCommentsAdapter);
@@ -120,7 +120,7 @@ public class CommentariosActivity extends AppCompatActivity {
         title.setText("Comentarios");
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(titulo);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_left);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_chevron_left);
         getSupportActionBar().setDisplayHomeAsUpEnabled(upButton);
     }
 

@@ -10,6 +10,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -18,6 +19,7 @@ android {
         }
     }
 }
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -38,6 +40,7 @@ dependencies {
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.7.1'
     implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.google.android.gms:play-services-maps:11.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
     //Circle  ImageView
     implementation 'de.hdodenhof:circleimageview:2.2.0'
@@ -53,11 +56,45 @@ dependencies {
     compile 'id.zelory:compressor:2.1.0'
     //BottomBar
     compile 'com.roughike:bottom-bar:2.3.1'
+    //Watson
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.ibm.watson.developer_cloud:conversation:4.2.1'
+    implementation 'com.ibm.watson.developer_cloud:text-to-speech:4.2.1'
+    implementation 'com.ibm.watson.developer_cloud:speech-to-text:4.2.1'
+    implementation 'com.ibm.watson.developer_cloud:android-sdk:0.4.3'
+    implementation 'com.ibm.mobilefirstplatform.clientsdk.android:analytics:1.+'
+
+    implementation 'com.massivedisaster.drawable:diagonaldrawable:0.1.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.android.support:multidex:1.0.1'
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

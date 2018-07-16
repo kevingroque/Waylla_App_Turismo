@@ -34,12 +34,6 @@ public class PostsActivity extends AppCompatActivity {
                                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                                 .addToBackStack(null).commit();
                         break;
-                    case R.id.tab_favoritos:
-                        FavoritosPostFragment favoritosPostFragment = new FavoritosPostFragment();
-                        getSupportFragmentManager().beginTransaction().replace(R.id.post_container_postList, favoritosPostFragment)
-                                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                                .addToBackStack(null).commit();
-                        break;
                     case R.id.tab_misposts:
                         MisPostsFragment misPostsFragment = new MisPostsFragment();
                         getSupportFragmentManager().beginTransaction().replace(R.id.post_container_postList, misPostsFragment)
@@ -57,7 +51,7 @@ public class PostsActivity extends AppCompatActivity {
         title.setText("Posts");
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(titulo);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_left);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_chevron_left);
         getSupportActionBar().setDisplayHomeAsUpEnabled(upButton);
     }
 

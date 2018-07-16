@@ -21,7 +21,7 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ComentariosAdapter extends RecyclerView.Adapter<ComentariosAdapter.ViewHolder>{
+public class ComentariosRecyclerViewAdapter extends RecyclerView.Adapter<ComentariosRecyclerViewAdapter.ViewHolder>{
 
     public List<Comentario> commentsList;
     public Context mContext;
@@ -29,21 +29,21 @@ public class ComentariosAdapter extends RecyclerView.Adapter<ComentariosAdapter.
     private FirebaseFirestore mFirestore;
     private FirebaseAuth mFirebaseAuth;
 
-    public ComentariosAdapter(List<Comentario> commentsList){
+    public ComentariosRecyclerViewAdapter(List<Comentario> commentsList){
         this.commentsList = commentsList;
     }
 
     @Override
-    public ComentariosAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ComentariosRecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_comments_items, parent, false);
         mContext = parent.getContext();
         mFirestore = FirebaseFirestore.getInstance();
         mFirebaseAuth = FirebaseAuth.getInstance();
-        return new ComentariosAdapter.ViewHolder(view);
+        return new ComentariosRecyclerViewAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final ComentariosAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(final ComentariosRecyclerViewAdapter.ViewHolder holder, int position) {
         holder.setIsRecyclable(false);
         String commentMessage = commentsList.get(position).getMessage();
         holder.setComment_message(commentMessage);

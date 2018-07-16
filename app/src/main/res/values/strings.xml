@@ -3,4 +3,36 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Watson Conversation Service Credentials --> 
+    <string name="workspace_id">45d33ca1-27cd-4f49-8dcc-4519024c0ba2</string> 
+    <string name="conversation_username">dcaa8eb3-c143-41fd-b7a1-7fdf28bee7f0</string> 
+    <string name="conversation_password">0sSV80zPK8Nd</string>  
+
+    <!--Watson Speech-To-Text Service Credentials--> 
+    <string name="STT_username"></string> 
+    <string name="STT_password"></string>  
+
+    <!--Watson Text-To-Speech Service Credentials--> 
+    <string name="TTS_username"></string>  
+    <string name="TTS_password"></string>
+
+    <!--IBM Cloud Mobile Analytics--> 
+    <string name="mobileanalytics_apikey">3Hqtto7gGqzmmCe-RK86UGgERS1gU9OW_OxlEaoubOfE</string>
+
+    <string-array name="shopping_item">
+        <item>Onion</item>
+        <item>Sausage</item>
+        <item>Milk</item>
+        <item>Garlic</item>
+        <item>Beef</item>
+        <item>Veggies</item>
+        <item>Olive</item>
+        <item>Cheese</item>
+        <item>Tuna</item>
+        <item>Mushrooms</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed tortor quis sapien lobortis mattis a nec tortor. Vivamus quis rutrum nulla. Integer placerat dignissim orci in convallis. Ut nec lectus id neque commodo aliquam. Sed gravida placerat diam quis porta. Donec laoreet, dolor et ultrices viverra, nisi sapien venenatis metus, id volutpat nisl leo et diam. Nullam mollis convallis erat ut volutpat. Praesent suscipit ultrices velit, at convallis eros sodales in. Morbi semper maximus nibh, et aliquet nisl. Nunc pulvinar nunc vitae velit mattis, in dignissim ligula convallis. Aenean quis ornare sapien. Integer odio ante, cursus eget tincidunt in, porttitor a arcu.</string>
+
 </resources>

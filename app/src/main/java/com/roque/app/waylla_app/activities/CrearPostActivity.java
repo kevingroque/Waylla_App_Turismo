@@ -19,6 +19,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -34,6 +36,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -126,6 +129,10 @@ public class CrearPostActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<DocumentReference> task) {
                                 mProgress.dismiss();
                                 if (task.isSuccessful()){
+
+                                    //Codigo parasubir puntos
+
+                                    
                                     goPosts();
                                 }else {
                                     Toast.makeText(CrearPostActivity.this, "Error al subir post", Toast.LENGTH_SHORT).show();
@@ -139,7 +146,6 @@ public class CrearPostActivity extends AppCompatActivity {
                     }
                 }
             });
-
         }
     }
 

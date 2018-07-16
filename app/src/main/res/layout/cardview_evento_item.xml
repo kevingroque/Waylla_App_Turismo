@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="8dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/evento_txt_destino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_bubble_self"
+            android:layout_marginTop="8dp"
+            tools:text="Lomas de Lachay"
+            android:textSize="22sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/eventos_txt_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Evento Nuevo Creado por Hanzito"
+            android:textSize="22dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="10dp"/>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_marginStart="10dp"
+           android:layout_marginEnd="10dp"
+           android:layout_marginTop="8dp"
+           android:gravity="center">
+
+           <LinearLayout
+               android:orientation="vertical"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_weight="0.3">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="8dp"
+                   android:orientation="horizontal">
+
+                   <ImageView
+                       android:layout_width="36dp"
+                       android:layout_height="36dp"
+                       app:srcCompat="@drawable/ic_adjust_black"
+                       android:layout_gravity="center_vertical"/>
+
+                   <TextView
+                       android:id="@+id/eventos_txt_fecha_inicial"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       tools:text="18/06/2019 - 19/02/2018"
+                       android:textSize="16sp"
+                       android:textColor="@color/black"
+                       android:layout_marginStart="5dp"
+                       android:layout_gravity="center_vertical"/>
+
+               </LinearLayout>
+
+               <View
+                   android:layout_width="4dp"
+                   android:layout_height="15dp"
+                   android:layout_marginStart="16dp"
+                   android:background="@color/black"/>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+
+                   <ImageView
+                       android:layout_width="36dp"
+                       android:layout_height="36dp"
+                       app:srcCompat="@drawable/ic_adjust_black"
+                       android:layout_gravity="center_vertical"/>
+
+                   <TextView
+                       android:id="@+id/eventos_txt_fecha_final"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       tools:text="18/06/2019 - 19/02/2018"
+                       android:textSize="16sp"
+                       android:textColor="@color/black"
+                       android:layout_marginStart="5dp"
+                       android:layout_gravity="center_vertical"/>
+               </LinearLayout>
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_weight="0.7"
+               android:layout_gravity="center"
+               android:gravity="center">
+               <de.hdodenhof.circleimageview.CircleImageView
+                   android:id="@+id/eventos_image_foto"
+                   android:layout_width="70dp"
+                   android:layout_height="70dp"
+                   android:src="@drawable/ic_money"
+                   android:layout_gravity="center" />
+           </LinearLayout>
+       </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingBottom="10dp">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/eventos_txt_asistentes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_profile_user"
+                    tools:text="  45 personas"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/eventos_txt_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="By: Keving Hanz Roque Huich"
+                    android:layout_margin="8dp"
+                    android:textSize="16sp"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/relativeLayoutOne">
+
+                <Button
+                    android:id="@+id/eventos_btn_ver_evento"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:layout_alignParentStart="true"
+                    android:drawableLeft="@drawable/ic_person_add_black"
+                    android:text="Ver evento"
+                    android:background="@drawable/edittext_layout"/>
+
+                <Button
+                    android:id="@+id/eventos_btn_unirme"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:drawableLeft="@drawable/ic_person_add_black"
+                    android:text="Unirme"
+                    android:background="@drawable/edittext_layout"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

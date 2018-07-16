@@ -2,9 +2,7 @@ package com.roque.app.waylla_app.fragments;
 
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -23,7 +21,7 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.roque.app.waylla_app.R;
 import com.roque.app.waylla_app.activities.CrearPostActivity;
-import com.roque.app.waylla_app.adapters.PostsAdapter;
+import com.roque.app.waylla_app.adapters.PostsRecyclerViewAdapter;
 import com.roque.app.waylla_app.models.Post;
 
 import java.util.ArrayList;
@@ -38,7 +36,7 @@ public class AllPostFragment extends Fragment {
     private List<Post> postList;
     private FloatingActionButton mCrearPostFab;
 
-    private PostsAdapter mPostAdapter;
+    private PostsRecyclerViewAdapter mPostAdapter;
 
     private FirebaseFirestore mFirestore;
     private FirebaseAuth mFirebaseAuth;
@@ -64,7 +62,7 @@ public class AllPostFragment extends Fragment {
         mCrearPostFab = (FloatingActionButton) view.findViewById(R.id.post_fab_agregar);
         mPostListRecycler = (RecyclerView) view.findViewById(R.id.post_recycler_postlist);
 
-        mPostAdapter = new PostsAdapter(getContext(),postList);
+        mPostAdapter = new PostsRecyclerViewAdapter(getContext(),postList);
         mPostListRecycler.setHasFixedSize(true);
         mPostListRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         mPostListRecycler.setAdapter(mPostAdapter);

@@ -45,7 +45,8 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:shadowDx="10"
-                android:shadowDy="10"/>
+                android:shadowDy="10"
+                android:onClick="goPerfil"/>
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -274,7 +275,8 @@
                         app:cardCornerRadius="10dp"
                         card_view:cardBackgroundColor="@android:color/white"
                         card_view:cardUseCompatPadding="true"
-                        card_view:cardElevation="4dp">
+                        card_view:cardElevation="4dp"
+                        android:onClick="goEventos">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -285,7 +287,7 @@
                                 android:layout_width="125dp"
                                 android:layout_height="125dp"
                                 android:layout_centerHorizontal="true"
-                                app:lottie_fileName="face_id.json"
+                                app:lottie_fileName="animation_3.json"
                                 app:lottie_loop="true"
                                 app:lottie_autoPlay="true"
                                 android:adjustViewBounds="true"
@@ -297,7 +299,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_centerHorizontal="true"
                                 android:layout_below="@id/anim_Recognition"
-                                android:text="Reconocimiento"
+                                android:text="Eventos"
                                 android:layout_marginTop="5dp"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
@@ -313,7 +315,8 @@
                         app:cardCornerRadius="10dp"
                         card_view:cardBackgroundColor="@android:color/white"
                         card_view:cardUseCompatPadding="true"
-                        card_view:cardElevation="4dp">
+                        card_view:cardElevation="4dp"
+                        android:onClick="goChatBot">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -324,7 +327,7 @@
                                 android:layout_width="125dp"
                                 android:layout_height="125dp"
                                 android:layout_centerHorizontal="true"
-                                app:lottie_fileName="fb_icon.json"
+                                app:lottie_fileName="browser.json"
                                 app:lottie_loop="true"
                                 app:lottie_autoPlay="true"
                                 android:adjustViewBounds="true"
@@ -336,7 +339,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_centerHorizontal="true"
                                 android:layout_below="@id/anim_Social"
-                                android:text="Social"
+                                android:text="WayllaBot"
                                 android:layout_marginTop="5dp"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
@@ -348,7 +351,7 @@
 
                 </LinearLayout>
 
-                <LinearLayout
+                <!--<LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -433,7 +436,7 @@
                     </android.support.v7.widget.CardView>
 
 
-                </LinearLayout>
+                </LinearLayout>-->
 
             </LinearLayout>
 
@@ -455,7 +458,8 @@
         app:targetX="16dp"
         app:targetY="8dp"
         app:targetWidth="40dp"
-        app:targetHeight="40dp"/>
+        app:targetHeight="40dp"
+        android:onClick="goPerfil"/>
 
     <TextView
         android:id="@+id/main_txt_nombre_toolbar"
@@ -480,12 +484,12 @@
         android:id="@+id/main_fab_logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
         app:srcCompat="@drawable/ic_power_white_24dp"
         app:elevation="6dp"
         app:fabSize="normal"
         app:layout_anchor="@id/app_bar_layout"
         app:layout_anchorGravity="bottom|right|end"
         android:onClick="logOut"/>
-
 
 </android.support.design.widget.CoordinatorLayout>

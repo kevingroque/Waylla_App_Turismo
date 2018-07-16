@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,7 +32,7 @@ import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> {
+public class PostsRecyclerViewAdapter extends RecyclerView.Adapter<PostsRecyclerViewAdapter.ViewHolder> {
 
     private Context mContext;
     private List<Post> mPostList;
@@ -41,7 +40,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
     private FirebaseFirestore mFirestore;
     private FirebaseAuth mFirebaseAuth;
 
-    public PostsAdapter(Context mContext, List<Post> mPostList){
+    public PostsRecyclerViewAdapter(Context mContext, List<Post> mPostList){
         this.mContext = mContext;
         this.mPostList = mPostList;
     }
@@ -49,7 +48,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_post_item, parent,false);
-        PostsAdapter.ViewHolder postHolder = new PostsAdapter.ViewHolder(v);
+        PostsRecyclerViewAdapter.ViewHolder postHolder = new PostsRecyclerViewAdapter.ViewHolder(v);
         mContext = parent.getContext();
         mFirestore = FirebaseFirestore.getInstance();
         mFirebaseAuth = FirebaseAuth.getInstance();
@@ -75,7 +74,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         String image_url = mPostList.get(position).getImage_url();
         holder.setPostImage(image_url);
 
-        String user_id = mPostList.get(position).getUser_uid();
+        final String user_id = mPostList.get(position).getUser_uid();
 
         mFirestore.collection("usuarios").document(user_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -145,7 +144,6 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
                 mContext.startActivity(commentIntent);
             }
         });
-
     }
 
     @Override

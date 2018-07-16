@@ -16,23 +16,18 @@ import android.widget.Toast;
 import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.roque.app.waylla_app.R;
-import com.roque.app.waylla_app.models.Usuario;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
@@ -76,7 +71,29 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = mFirebaseAuth.getCurrentUser();
                 if (user != null){
-                    setUserData(user);
+                    mFirestore.collection("usuarios").document(user.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            if(task.isSuccessful()){
+                                String userName = task.getResult().getString("nombre");
+                                String userImage = task.getResult().getString("avatar");
+                                Double userLevel = task.getResult().getDouble("nivel");
+                                Double userCoins = task.getResult().getDouble("coins");
+
+                                Integer level = userLevel.intValue();
+                                Integer coins = userCoins.intValue();
+
+                                mNombreText.setText(userName);
+                                mNombreText2.setText(userName);
+                                mNivelText.setText(level.toString());
+                                mCoinsText.setText(coins.toString());
+                                Glide.with(getApplicationContext()).load(userImage).into(mFotoPerfil);
+
+                            } else {
+                                //Firebase Exception
+                            }
+                        }
+                    });
                 }else {
                     goLoginScreen();
                 }
@@ -87,12 +104,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         mLevel.setProgressBackgroundColor(Color.parseColor("#FAFAFA"));
         mLevel.setMax(100);
         mLevel.setProgress(70);
-
-    }
-
-    private void setUserData(FirebaseUser user) {
-        mNombreText.setText(user.getDisplayName());
-        Glide.with(this).load(user.getPhotoUrl()).into(mFotoPerfil);
 
     }
 
@@ -115,7 +126,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             mFirebaseAuth.removeAuthStateListener(mAuthListener);
         }
     }
-
 
     public void logOut(final View view){
         final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
@@ -150,6 +160,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     }
 
     //funcion para ir a las secciones
+    public void goPerfil(View view){
+        String user_uid = mFirebaseAuth.getCurrentUser().getUid();
+
+        Intent intent = new Intent(this, PerfilUsuarioActivity.class);
+        intent.putExtra("user_uid", user_uid);
+        startActivity(intent);
+    }
+
     public void goLomas(View view){
         Intent intent = new Intent(this, LomasInfoActivity.class);
         startActivity(intent);
@@ -160,6 +178,15 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         startActivity(intent);
     }
 
+    public void goEventos(View view){
+        Intent intent = new Intent(this, EventosActivity.class);
+        startActivity(intent);
+    }
+
+    public void goChatBot(View view){
+        Intent intent = new Intent(this, ChatBotActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {

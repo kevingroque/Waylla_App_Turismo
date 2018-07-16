@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.roque.app.waylla_app.activities.PerfilUsuarioActivity">
+
+    <include
+        android:id="@+id/toolbar_perfil"
+        layout="@layout/actionbar_toolbar"/>
+
+    <ScrollView
+        android:layout_below="@+id/toolbar_perfil"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/perfil_img_foto_user"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/ic_bagpack"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_marginStart="4dp">
+
+                        <TextView
+                            android:id="@+id/perfil_txt_nombre"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Keving Hanz Roque Huich"
+                            android:textSize="19sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:textColor="@color/black"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="10dp">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/perfil_img_nivel"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/ic_level"
+                                android:layout_marginEnd="5dp"/>
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/perfil_img_foto_nivel"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/ic_bagpack"
+                                android:layout_marginEnd="5dp"/>
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/ic_money"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                android:layout_marginTop="15dp"
+                app:cardElevation="5dp">
+
+                <com.borjabravo.readmoretextview.ReadMoreTextView
+                    android:id="@+id/perfil_txt_descripcion_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:ellipsize="end"
+                    tools:text="@string/lorem_ipsum"
+                    android:textAppearance="@style/TextAppearance.Second"
+                    app:trimExpandedText="  Ver más..."
+                    app:trimCollapsedText="  Ver menos"
+                    app:colorClickableText="@android:color/holo_blue_light"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="5dp"
+                android:layout_marginTop="15dp">
+
+                <android.support.design.widget.CoordinatorLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.design.widget.AppBarLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/AppTheme.PopupOverlay">
+
+                        <android.support.design.widget.TabLayout
+                            android:id="@+id/perfil_tabs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            app:tabGravity="fill"
+                            app:tabMode="fixed" />
+                    </android.support.design.widget.AppBarLayout>
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/perfil_viewpager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                </android.support.design.widget.CoordinatorLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

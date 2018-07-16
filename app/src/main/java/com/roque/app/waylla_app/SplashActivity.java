@@ -5,7 +5,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.roque.app.waylla_app.activities.LoginActivity;
+import com.roque.app.waylla_app.activities.CrearEventoActivity;
+import com.roque.app.waylla_app.activities.IntroSliderActivity;
 import com.roque.app.waylla_app.activities.MainActivity;
 
 public class SplashActivity extends AppCompatActivity {
@@ -18,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                startActivity(new Intent(SplashActivity.this, IntroSliderActivity.class));
                 finish();
             }
         },3000);

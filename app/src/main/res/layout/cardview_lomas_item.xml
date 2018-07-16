@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout android:layout_marginTop="12dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lomas_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="5dp">
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/lomas_img_foto"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                tools:background="@drawable/ic_launcher_background"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/lomas_img_foto"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <com.borjabravo.readmoretextview.ReadMoreTextView
+                    android:id="@+id/txt_distrito_lomas_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:layout_below="@+id/container_date"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/img_perfil_user_post_list"
+                    android:ellipsize="end"
+                    tools:text="Descripcion del la imagen"
+                    android:textSize="16sp"
+                    android:drawableLeft="@drawable/ic_map_marker_radius"
+                    android:textAppearance="@style/TextAppearance.Second"
+                    android:layout_alignParentEnd="true"
+                    app:trimExpandedText="  Ver más..."
+                    app:trimCollapsedText="  Ver menos"
+                    app:colorClickableText="@android:color/holo_blue_light"/>
+
+                <com.borjabravo.readmoretextview.ReadMoreTextView
+                    android:id="@+id/lomas_txt_ubicacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:layout_below="@+id/container_date"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/img_perfil_user_post_list"
+                    android:ellipsize="end"
+                    tools:text="Descripcion del la imagen"
+                    android:textSize="16sp"
+                    android:textAppearance="@style/TextAppearance.Second"
+                    android:layout_alignParentEnd="true"
+                    app:trimExpandedText="  Ver más..."
+                    app:trimCollapsedText="  Ver menos"
+                    app:colorClickableText="@android:color/holo_blue_light"/>
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:cardElevation="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/colorAccent">
+
+        <TextView
+            android:id="@+id/lomas_txt_nombreloma"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            tools:text="Nombre de la Loma"/>
+
+    </android.support.v7.widget.CardView>
+
+</android.support.design.widget.CoordinatorLayout>
